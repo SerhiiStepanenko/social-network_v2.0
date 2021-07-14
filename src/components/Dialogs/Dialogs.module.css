@@ -1,0 +1,11 @@
+.dialogs{
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+}
+
+.message{
+    background-color: floralwhite;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 3px;
+}

@@ -1,0 +1,8 @@
+.footer{
+    grid-area: f;
+    /* border: 1px solid black; */
+    padding: 15px;
+    color: #61dafb;
+    background-color: #282c34;
+    text-align: center;
+}

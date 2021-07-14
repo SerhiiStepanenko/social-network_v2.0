@@ -1,0 +1,26 @@
+.nameBlock h2{
+    margin: 0px;
+    padding: 0px;
+}
+
+.acquaintance{
+    padding: 5px;
+    /* border: 1px solid black; */
+    display: flex;
+}
+
+    .acquaintance__avatar{
+        width: 200px;
+        height: 200px;
+        border-radius: 100px;
+        box-shadow: 0 0 7px #666
+    }
+
+    .acquaintance__description{
+        width: 300px;
+        /* border: 1px solid black; */
+        margin-left: 20px;
+        background-color: floralwhite;
+        border-radius: 20px;
+        padding: 10px;
+    }

@@ -1,0 +1,28 @@
+.header{
+    grid-area: h;
+    /* border: 1px solid black; */
+
+    display: flex;
+    color: #61dafb;
+    background-color: #282c34;
+}
+
+    .header__logo {
+        height: 11vmin;
+        pointer-events: none; 
+    } 
+
+    @media (prefers-reduced-motion: no-preference) {
+        .header__logo {
+        animation: headerLogo infinite 20s linear;
+        }
+    } 
+
+    @keyframes headerLogo {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
