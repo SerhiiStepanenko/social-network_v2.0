@@ -9,3 +9,13 @@
     padding: 10px;
     margin-bottom: 3px;
 }
+
+.formMessage{
+    margin-top: 100px;
+}
+
+.formMessage textarea{
+    width: 700px;
+    background-color: floralwhite;
+    height: 50px;
+}

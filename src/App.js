@@ -18,8 +18,14 @@ const App = (props) => {
           <Header />
           <Nav />
           <div className="main">
-            <Route path="/" exact render={() => <Main mainPage={props.state.mainPage} />} />
-            <Route path="/messages" render={() => <Dialogs dialogsPage={props.state.dialogsPage} />} />
+            <Route path="/" exact
+              render={() => <Main
+                mainPage={props.state.mainPage}
+                dispatch={props.dispatch}/>} />
+            <Route path="/messages"
+              render={() => <Dialogs
+                dialogsPage={props.state.dialogsPage}
+                dispatch={props.dispatch}/>}/>
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
