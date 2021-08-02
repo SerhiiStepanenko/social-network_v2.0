@@ -4,11 +4,12 @@ import Header from './components/Header/Header';
 import Nav from './components/Nav/Nav';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
-import Dialogs from './components/Dialogs/Dialogs';
 import { BrowserRouter, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
+import UsersContainer from './components/Users/UsersContainer';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
   return (
@@ -19,13 +20,11 @@ const App = (props) => {
           <Nav />
           <div className="main">
             <Route path="/" exact
-              render={() => <Main
-                mainPage={props.state.mainPage}
-                dispatch={props.dispatch}/>} />
+              render={() => <Main/>} />
             <Route path="/messages"
-              render={() => <Dialogs
-                dialogsPage={props.state.dialogsPage}
-                dispatch={props.dispatch}/>}/>
+              render={() => <DialogsContainer/>} />
+            <Route path="/users"
+              render={() => <UsersContainer/>} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />

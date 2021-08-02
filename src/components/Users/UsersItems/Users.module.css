@@ -1,0 +1,44 @@
+.usersItems{
+    display: flex;
+    margin-top: 10px;
+    background-color: floralwhite;
+    border-radius: 20px;
+    width: 500px;
+    /* border: 1px solid black; */
+}
+
+.leftBlock{
+    margin-right: 20px;
+    /* border: 1px solid black; */
+}
+
+.leftBlock img{
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 7px #666;
+    /* border: 1px solid black; */
+    /* background-size: auto 80px; */
+}
+
+.button button{
+    width: 70px;
+}
+
+.rigtBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 400px;
+}
+
+.likeBlock span{
+    margin-left: 9px;
+}
+
+
+
+.countryBlock div{
+    text-align: right;
+}

@@ -1,20 +1,19 @@
 import React from "react";
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
-import { addPostActionCreator, updateNewPostActionCreator } from "../../../redux/main-reducer";
 
 
 const MyPosts = (props) => {
-    let postsElement = props.posts.map(p => <Post message={p.message} countLikes={p.countLikes} />)
+    let postsElement = props.mainPage.posts.map(p => <Post message={p.message} countLikes={p.countLikes} />)
 
     let newPostText = React.createRef();
-    let addPost = () => {
-        props.dispatch(addPostActionCreator())
+    let onAddPost = () => {
+        props.addPost()
     }
 
     let onPostChange = () =>{
         let text = newPostText.current.value;
-        props.dispatch(updateNewPostActionCreator(text))
+        props.updateNewPost(text)
     }
 
     return (
@@ -25,10 +24,10 @@ const MyPosts = (props) => {
                 className={s.centralPart__postArea} 
                 ref={newPostText}
                 onChange={onPostChange}
-                value={props.newPostText}/>
+                value={props.mainPage.newPostText}/>
                 
             <div>
-                <button onClick={addPost}>Send</button>
+                <button onClick={onAddPost}>Send</button>
             </div>
             {postsElement}
         </div>
