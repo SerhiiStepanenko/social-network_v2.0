@@ -20,7 +20,7 @@ import MyPosts from "./MyPosts";
 
 let mapStateToProps = (state) => {
     return {
-        mainPage: state.mainPage,
+        profilePage: state.profilePage,
     }
 }
 

@@ -42,3 +42,7 @@
 .countryBlock div{
     text-align: right;
 }
+
+.activeItem{
+    font-weight: bold ;
+}

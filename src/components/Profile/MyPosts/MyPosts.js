@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 
 
 const MyPosts = (props) => {
-    let postsElement = props.mainPage.posts.map(p => <Post message={p.message} countLikes={p.countLikes} />)
+    let postsElement = props.profilePage.posts.map(p => <Post message={p.message} countLikes={p.countLikes} />)
 
     let newPostText = React.createRef();
     let onAddPost = () => {
@@ -24,7 +24,7 @@ const MyPosts = (props) => {
                 className={s.centralPart__postArea} 
                 ref={newPostText}
                 onChange={onPostChange}
-                value={props.mainPage.newPostText}/>
+                value={props.profilePage.newPostText}/>
                 
             <div>
                 <button onClick={onAddPost}>Send</button>

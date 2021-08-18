@@ -1,16 +1,16 @@
 import React from "react";
 import s from './Main.module.css';
 import MyPostsContainerosts from "./MyPosts/MyPostsContainer";
-import Profile from "./Profile/Profile";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const Main = (props) => {
+const Profile = (props) => {
 
     return (
         <main className={s.main}>
-            <Profile />
+            <ProfileInfo profile={props.profile}/>
             <MyPostsContainerosts/>
         </main>
     );
 }
 
-export default Main;
+export default Profile;
