@@ -2,7 +2,7 @@ import userPhoto from '../../assets/images/1.png'
 import React from 'react';
 import s from './UsersItems/Users.module.css';
 import { NavLink } from 'react-router-dom';
-import * as axios from 'axios';
+import { usersAPI } from '../../api/api'
 
 let Users = (props) => {
 
@@ -25,36 +25,11 @@ let Users = (props) => {
                     </NavLink>
                     <div className={s.button}>
                         {u.followed
-                            ? <button onClick={() => {
-                                props.toggleIsFetching(true)
-                                axios.delete(`https://social-network.samuraijs.com/api/1.0//follow/${u.id}`, {
-                                    withCredentials: true,
-                                    headers:{
-                                        "API-KEY": "483cd284-c834-469e-80af-b4e2e02a9be2"
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.unfollow(u.id)
-                                        }
-                                        props.toggleIsFetching(false)
-                                    })
-                                
+                            ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.getUsersUnfollowThankCreator(u.id)
                             }}>Unfollow</button>
-                            : <button onClick={() => {
-                                props.toggleIsFetching(true)
-                                axios.post(`https://social-network.samuraijs.com/api/1.0//follow/${u.id}`, {}, {
-                                    withCredentials: true,
-                                    headers:{
-                                        "API-KEY": "483cd284-c834-469e-80af-b4e2e02a9be2"
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.follow(u.id)
-                                        }
-                                        props.toggleIsFetching(false)
-                                    })
+                            : <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                props.getUsersFollowThankCreator(u.id)
                             }}>Follow</button>}
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import Avatar from './Avatar.jpg';
 import s from './Profile.module.css';
+import unknown from '../../../assets/images/1.png'
 
 
 const ProfileInfo = (props) => {
@@ -14,7 +15,7 @@ const ProfileInfo = (props) => {
                 <h2 className={s.nameBlock__name}>{props.profile.fullName}</h2>
             </div>
             <div className={s.acquaintance}>
-                <img className={s.acquaintance__avatar} src={props.profile.photos.large} />
+                <img className={s.acquaintance__avatar} src={props.profile.photos.large === null ? unknown : props.profile.photos.large} />
                 <div className={s.acquaintance__description}>
                     {props.profile.aboutMe}
                 </div>

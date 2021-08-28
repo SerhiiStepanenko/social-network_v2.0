@@ -10,10 +10,10 @@ const Header = (props) => {
                 <h2 className={s.header__banner}>React social-network</h2>
                 <div className={s.logoBlock}>
                     {props.isAuth ? props.login : <NavLink to="/login">Login</NavLink>}
-                    
                 </div>
             </header>
     );
 }
 
 export default Header;
+
